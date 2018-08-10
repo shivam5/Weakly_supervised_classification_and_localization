@@ -1,0 +1,71 @@
+Weakly supervised classification and localization of common thorax diseases
+
+By Shivam Mittal
+Mentored by Dr. Abhinav Dhall (IIT Ropar)
+IIT Ropar
+------------------------------------------------------------------------------
+
+In this project, we use the NIH Chest X-ray Dataset which comprises of over 1 lakh frontal-view X-ray images
+with labels for each image specifying the presence/absence of 14 common thorax diseases.
+We develop a model for multi label image classification and weakly supervised pathology localization framework,
+which detects the presence of multiple diseases and also generates bounding boxes around the corresponding disease.
+
+For more details about the project, read the report given here:
+https://drive.google.com/drive/folders/1-1rqJoR4QXH3k7vk__85iqqfSKOlxcNC?usp=sharing
+
+Directory structure
+---------------------
+
+Weakly_sup_localization/
+  |
+  |- data/
+      |
+      |- xray/
+        |- label_dict.pickle
+        |- localization.pickle
+        |- test.pickle
+        |- train.pickle
+        |- val.pickle
+      |- caffe_layers_value.pickle
+  |- code/
+      |
+      |- localization_results/ (contains result images)
+      |- models/ (contains trained models)
+      |- results/ (Contains results of the experiments)
+      |- src/
+        |- detector.py
+        |- test_classification.py
+        |- test_localization.py
+        |- train_xray.py
+        |- util.py
+  |- dataset/
+      |
+      |- images/ (contains all the train/val/test images)
+      |- BBox_List_2017.csv
+      |- Data_Entry_2017.csv
+      |- test_list.txt
+      |- train_val_list.txt
+
+
+To download the contents of the dataset folder - Download the chest-xray data from here
+https://nihcc.app.box.com/v/ChestXray-NIHCC
+Also, uncompress all the images into the images folder.
+
+To download the contents of the code or the data folder - Go here:
+https://drive.google.com/drive/folders/1-1rqJoR4QXH3k7vk__85iqqfSKOlxcNC?usp=sharing
+
+
+To train - Go to the code folder, and run:
+python train_xray.py
+
+To test the classification performance - Go to the code folder, and run:
+python test_classification.py
+
+To test the localization performace - Go to the code folder, and run:
+python test_localization.py
+
+
+
+Credits:
+--------
+Parts of code taken from : https://github.com/jazzsaxmafia/Weakly_detector
